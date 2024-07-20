@@ -2,13 +2,13 @@ import { useState } from "react";
 import quizData from "./quizData";
 
 function Quiz() {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [score, setScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
-  const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [isCorrect, setIsCorrect] = useState(null);
+  const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+  const [score, setScore] = useState<number>(0);
+  const [showScore, setShowScore] = useState<boolean>(false);
+  const [selectedAnswer, setSelectedAnswer] = useState<string>("");
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
-  const handleAnswerOptionClick = (option) => {
+  const handleAnswerOptionClick = (option: string): void => {
     const correctAnswer = quizData[currentQuestion].answer;
     setSelectedAnswer(option);
     if (option === correctAnswer) {
@@ -48,7 +48,7 @@ function Quiz() {
             </div>
           </div>
           <div className="answer-section">
-            {quizData[currentQuestion].options.map((option) => (
+            {quizData[currentQuestion].options.map((option: string) => (
               <button
                 onClick={() => handleAnswerOptionClick(option)}
                 key={option}
