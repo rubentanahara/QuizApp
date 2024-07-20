@@ -29,6 +29,7 @@ function App() {
         {({ signOut }) => (
           <main>
             <header className='App-header'>
+              <h1>Testing..</h1>
               {/* Quiz Component */}
               <Quiz />
               {/* Sign Out Button */}
